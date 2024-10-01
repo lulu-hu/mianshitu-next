@@ -1,9 +1,10 @@
 package com.lulu.mianshitu.wxmp;
 
--backend.wxmp.handler.EventHandler;
+
+import com.lulu.mianshitu.wxmp.handler.EventHandler;
 import com.lulu.mianshitu.wxmp.handler.MessageHandler;
--backend.wxmp.handler.SubscribeHandler;
 import javax.annotation.Resource;
+import com.lulu.mianshitu.wxmp.handler.SubscribeHandler;
 import me.chanjar.weixin.common.api.WxConsts.EventType;
 import me.chanjar.weixin.common.api.WxConsts.XmlMsgType;
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;

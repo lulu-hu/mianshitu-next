@@ -1,8 +1,8 @@
 package com.lulu.mianshitu.exception;
 
 import com.lulu.mianshitu.common.BaseResponse;
--backend.common.ErrorCode;
--backend.common.ResultUtils;
+import com.lulu.mianshitu.common.ErrorCode;
+import com.lulu.mianshitu.common.ResultUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

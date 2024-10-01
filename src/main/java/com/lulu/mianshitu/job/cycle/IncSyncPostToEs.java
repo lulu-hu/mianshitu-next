@@ -1,8 +1,9 @@
 package com.lulu.mianshitu.job.cycle;
 
--backend.esdao.PostEsDao;
--backend.mapper.PostMapper;
--backend.model.dto.post.PostEsDTO;
+
+import com.lulu.mianshitu.esdao.PostEsDao;
+import com.lulu.mianshitu.mapper.PostMapper;
+import com.lulu.mianshitu.model.dto.post.PostEsDTO;
 import com.lulu.mianshitu.model.entity.Post;
 import java.util.Date;
 import java.util.List;

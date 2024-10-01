@@ -1,20 +1,23 @@
 package com.lulu.mianshitu.controller;
 
 import cn.hutool.core.io.FileUtil;
--backend.common.BaseResponse;
--backend.common.ErrorCode;
--backend.common.ResultUtils;
--backend.constant.FileConstant;
--backend.exception.BusinessException;
--backend.manager.CosManager;
--backend.model.dto.file.UploadFileRequest;
+
+import com.lulu.mianshitu.common.BaseResponse;
+import com.lulu.mianshitu.common.ErrorCode;
+import com.lulu.mianshitu.common.ResultUtils;
+import com.lulu.mianshitu.constant.FileConstant;
+import com.lulu.mianshitu.exception.BusinessException;
+import com.lulu.mianshitu.manager.CosManager;
+import com.lulu.mianshitu.model.dto.file.UploadFileRequest;
 import com.lulu.mianshitu.model.entity.User;
--backend.model.enums.FileUploadBizEnum;
--backend.service.UserService;
+
 import java.io.File;
 import java.util.Arrays;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
+import com.lulu.mianshitu.model.enums.FileUploadBizEnum;
+import com.lulu.mianshitu.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,7 +53,7 @@ public class FileController {
      */
     @PostMapping("/upload")
     public BaseResponse<String> uploadFile(@RequestPart("file") MultipartFile multipartFile,
-            UploadFileRequest uploadFileRequest, HttpServletRequest request) {
+                                           UploadFileRequest uploadFileRequest, HttpServletRequest request) {
         String biz = uploadFileRequest.getBiz();
         FileUploadBizEnum fileUploadBizEnum = FileUploadBizEnum.getEnumByValue(biz);
         if (fileUploadBizEnum == null) {

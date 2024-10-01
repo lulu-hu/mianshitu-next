@@ -1,15 +1,17 @@
 package com.lulu.mianshitu.controller;
 
--backend.common.BaseResponse;
--backend.common.ErrorCode;
+import com.lulu.mianshitu.common.BaseResponse;
+import com.lulu.mianshitu.common.ErrorCode;
 import com.lulu.mianshitu.common.ResultUtils;
--backend.exception.BusinessException;
--backend.model.dto.postthumb.PostThumbAddRequest;
--backend.model.entity.User;
--backend.service.PostThumbService;
--backend.service.UserService;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
+import com.lulu.mianshitu.exception.BusinessException;
+import com.lulu.mianshitu.model.dto.postthumb.PostThumbAddRequest;
+import com.lulu.mianshitu.model.entity.User;
+import com.lulu.mianshitu.service.PostThumbService;
+import com.lulu.mianshitu.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,7 +44,7 @@ public class PostThumbController {
      */
     @PostMapping("/")
     public BaseResponse<Integer> doThumb(@RequestBody PostThumbAddRequest postThumbAddRequest,
-            HttpServletRequest request) {
+                                         HttpServletRequest request) {
         if (postThumbAddRequest == null || postThumbAddRequest.getPostId() <= 0) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }

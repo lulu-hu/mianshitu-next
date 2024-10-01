@@ -2,15 +2,18 @@ package com.lulu.mianshitu.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
--backend.common.ErrorCode;
--backend.exception.BusinessException;
--backend.mapper.PostThumbMapper;
+
+import com.lulu.mianshitu.common.ErrorCode;
+import com.lulu.mianshitu.exception.BusinessException;
+import com.lulu.mianshitu.mapper.PostThumbMapper;
 import com.lulu.mianshitu.model.entity.Post;
--backend.model.entity.PostThumb;
--backend.model.entity.User;
--backend.service.PostService;
--backend.service.PostThumbService;
+
 import javax.annotation.Resource;
+
+import com.lulu.mianshitu.model.entity.PostThumb;
+import com.lulu.mianshitu.model.entity.User;
+import com.lulu.mianshitu.service.PostService;
+import com.lulu.mianshitu.service.PostThumbService;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

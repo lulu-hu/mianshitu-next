@@ -1,31 +1,26 @@
 package com.lulu.mianshitu.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
--backend.annotation.AuthCheck;
-import com.lulu.mianshitu.common.BaseResponse;
--backend.common.DeleteRequest;
--backend.common.ErrorCode;
--backend.common.ResultUtils;
--backend.config.WxOpenConfig;
--backend.constant.UserConstant;
--backend.exception.BusinessException;
--backend.exception.ThrowUtils;
--backend.model.dto.user.UserAddRequest;
--backend.model.dto.user.UserLoginRequest;
--backend.model.dto.user.UserQueryRequest;
--backend.model.dto.user.UserRegisterRequest;
--backend.model.dto.user.UserUpdateMyRequest;
--backend.model.dto.user.UserUpdateRequest;
--backend.model.entity.User;
--backend.model.vo.LoginUserVO;
--backend.model.vo.UserVO;
--backend.service.UserService;
 
+import com.lulu.mianshitu.annotation.AuthCheck;
+import com.lulu.mianshitu.common.BaseResponse;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lulu.mianshitu.common.DeleteRequest;
+import com.lulu.mianshitu.common.ErrorCode;
+import com.lulu.mianshitu.common.ResultUtils;
+import com.lulu.mianshitu.config.WxOpenConfig;
+import com.lulu.mianshitu.constant.UserConstant;
+import com.lulu.mianshitu.exception.BusinessException;
+import com.lulu.mianshitu.exception.ThrowUtils;
+import com.lulu.mianshitu.model.dto.user.*;
+import com.lulu.mianshitu.model.entity.User;
+import com.lulu.mianshitu.model.vo.LoginUserVO;
+import com.lulu.mianshitu.model.vo.UserVO;
+import com.lulu.mianshitu.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
 import me.chanjar.weixin.common.bean.oauth2.WxOAuth2AccessToken;

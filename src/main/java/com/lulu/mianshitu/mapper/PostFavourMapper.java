@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lulu.mianshitu.model.entity.Post;
--backend.model.entity.PostFavour;
+import com.lulu.mianshitu.model.entity.PostFavour;
 import org.apache.ibatis.annotations.Param;
 
 /**

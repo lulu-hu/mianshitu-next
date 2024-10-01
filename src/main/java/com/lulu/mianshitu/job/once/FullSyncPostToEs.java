@@ -1,12 +1,14 @@
 package com.lulu.mianshitu.job.once;
 
--backend.esdao.PostEsDao;
--backend.model.dto.post.PostEsDTO;
+import com.lulu.mianshitu.esdao.PostEsDao;
+import com.lulu.mianshitu.model.dto.post.PostEsDTO;
 import com.lulu.mianshitu.model.entity.Post;
--backend.service.PostService;
+
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.annotation.Resource;
+
+import com.lulu.mianshitu.service.PostService;
 import lombok.extern.slf4j.Slf4j;
 import cn.hutool.core.collection.CollUtil;
 import org.springframework.boot.CommandLineRunner;

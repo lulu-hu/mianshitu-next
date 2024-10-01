@@ -5,7 +5,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lulu.mianshitu.model.entity.Post;
--backend.model.entity.PostFavour;-backend.model.entity.User;
+import com.lulu.mianshitu.model.entity.PostFavour;
+import com.lulu.mianshitu.model.entity.User;
+
 
 /**
  * 帖子收藏服务

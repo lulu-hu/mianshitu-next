@@ -3,11 +3,13 @@ package com.lulu.mianshitu.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lulu.mianshitu.model.dto.user.UserQueryRequest;
--backend.model.entity.User;
--backend.model.vo.LoginUserVO;
--backend.model.vo.UserVO;
+
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+
+import com.lulu.mianshitu.model.entity.User;
+import com.lulu.mianshitu.model.vo.LoginUserVO;
+import com.lulu.mianshitu.model.vo.UserVO;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
 
 /**

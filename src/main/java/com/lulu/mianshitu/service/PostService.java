@@ -4,8 +4,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lulu.mianshitu.model.dto.post.PostQueryRequest;
--backend.model.entity.Post;
--backend.model.vo.PostVO;
+import com.lulu.mianshitu.model.entity.Post;
+import com.lulu.mianshitu.model.vo.PostVO;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**

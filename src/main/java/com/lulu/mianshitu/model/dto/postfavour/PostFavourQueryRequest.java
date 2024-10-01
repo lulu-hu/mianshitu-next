@@ -1,8 +1,8 @@
 package com.lulu.mianshitu.model.dto.postfavour;
 
 import com.lulu.mianshitu.common.PageRequest;
--backend.model.dto.post.PostQueryRequest;
 import java.io.Serializable;
+import com.lulu.mianshitu.model.dto.post.PostQueryRequest;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

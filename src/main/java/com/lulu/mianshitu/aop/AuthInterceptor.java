@@ -1,11 +1,12 @@
 package com.lulu.mianshitu.aop;
 
--backend.annotation.AuthCheck;
--backend.common.ErrorCode;
--backend.exception.BusinessException;
+
+import com.lulu.mianshitu.annotation.AuthCheck;
+import com.lulu.mianshitu.common.ErrorCode;
+import com.lulu.mianshitu.exception.BusinessException;
 import com.lulu.mianshitu.model.entity.User;
--backend.model.enums.UserRoleEnum;
--backend.service.UserService;
+import com.lulu.mianshitu.model.enums.UserRoleEnum;
+import com.lulu.mianshitu.service.UserService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
