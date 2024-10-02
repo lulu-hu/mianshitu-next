@@ -10,17 +10,22 @@ import com.lulu.mianshitu.exception.ThrowUtils;
 import com.lulu.mianshitu.mapper.QuestionBankQuestionMapper;
 
 import com.lulu.mianshitu.model.dto.questionbankquesion.QuestionBankQuestionQueryRequest;
+import com.lulu.mianshitu.model.entity.Question;
+import com.lulu.mianshitu.model.entity.QuestionBank;
 import com.lulu.mianshitu.model.entity.QuestionBankQuestion;
 
 import com.lulu.mianshitu.model.entity.User;
 import com.lulu.mianshitu.model.vo.QuestionBankQuestionVO;
 import com.lulu.mianshitu.model.vo.UserVO;
 import com.lulu.mianshitu.service.QuestionBankQuestionService;
+import com.lulu.mianshitu.service.QuestionBankService;
+import com.lulu.mianshitu.service.QuestionService;
 import com.lulu.mianshitu.service.UserService;
 import com.lulu.mianshitu.utils.SqlUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -42,6 +47,13 @@ public class QuestionBankQuestionServiceImpl extends ServiceImpl<QuestionBankQue
     @Resource
     private UserService userService;
 
+    @Resource
+    @Lazy
+    private QuestionService questionService;
+
+    @Resource
+    private QuestionBankService questionBankService;
+
     /**
      * 校验数据
      *
@@ -51,6 +63,17 @@ public class QuestionBankQuestionServiceImpl extends ServiceImpl<QuestionBankQue
     @Override
     public void validQuestionBankQuestion(QuestionBankQuestion questionBankQuestion, boolean add) {
         ThrowUtils.throwIf(questionBankQuestion == null, ErrorCode.PARAMS_ERROR);
+        // 题目和题库必须存在
+        Long questionId = questionBankQuestion.getQuestionId();
+        if (questionId != null) {
+            Question question = questionService.getById(questionId);
+            ThrowUtils.throwIf(question == null, ErrorCode.NOT_FOUND_ERROR, "题目不存在");
+        }
+        Long questionBankId = questionBankQuestion.getQuestionBankId();
+        if (questionBankId != null) {
+            QuestionBank questionBank = questionBankService.getById(questionBankId);
+            ThrowUtils.throwIf(questionBank == null, ErrorCode.NOT_FOUND_ERROR, "题库不存在");
+        }
         // 不需要校验
 //        // 创建数据时，参数不能为空
 //        if (add) {
